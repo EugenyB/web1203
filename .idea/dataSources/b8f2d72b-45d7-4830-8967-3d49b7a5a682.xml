@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="booksnew2@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="booksnew2">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="alexdb"/>
+    <schema id="4" parent="1" name="books"/>
+    <schema id="5" parent="1" name="booksnew"/>
+    <schema id="6" parent="1" name="booksnew3"/>
+    <schema id="7" parent="1" name="db0412"/>
+    <schema id="8" parent="1" name="db2501"/>
+    <schema id="9" parent="1" name="db2502"/>
+    <schema id="10" parent="1" name="demo_db"/>
+    <schema id="11" parent="1" name="domofon"/>
+    <schema id="12" parent="1" name="educenterdb"/>
+    <schema id="13" parent="1" name="homelibrary"/>
+    <schema id="14" parent="1" name="information_schema"/>
+    <schema id="15" parent="1" name="jpaexample"/>
+    <schema id="16" parent="1" name="library"/>
+    <schema id="17" parent="1" name="m2m"/>
+    <schema id="18" parent="1" name="mydatabase11"/>
+    <schema id="19" parent="1" name="mydatabase19"/>
+    <schema id="20" parent="1" name="mydatabase2602"/>
+    <schema id="21" parent="1" name="mydatabase7"/>
+    <schema id="22" parent="1" name="mydatabase8"/>
+    <schema id="23" parent="1" name="mysatabase2"/>
+    <schema id="24" parent="1" name="mysql"/>
+    <schema id="25" parent="1" name="mytest"/>
+    <schema id="26" parent="1" name="natalibrary"/>
+    <schema id="27" parent="1" name="passport"/>
+    <schema id="28" parent="1" name="performance_schema"/>
+    <schema id="29" parent="1" name="phonenote"/>
+    <schema id="30" parent="1" name="phpmyadmin"/>
+    <schema id="31" parent="1" name="planets"/>
+    <schema id="32" parent="1" name="ships"/>
+    <schema id="33" parent="1" name="slavadb"/>
+    <schema id="34" parent="1" name="sp2012"/>
+    <schema id="35" parent="1" name="statistics"/>
+    <schema id="36" parent="1" name="test"/>
+    <schema id="37" parent="1" name="testdb"/>
+    <schema id="38" parent="1" name="watches"/>
+    <schema id="39" parent="1" name="webenglish"/>
+    <schema id="40" parent="1" name="weblibrary"/>
+    <schema id="41" parent="1" name="z12"/>
+    <table id="42" parent="2" name="author"/>
+    <table id="43" parent="2" name="book"/>
+    <table id="44" parent="2" name="genre"/>
+    <table id="45" parent="2" name="genre_book"/>
+    <column id="46" parent="42" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="42" name="NAME">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="48" parent="42" name="YEAR">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="49" parent="42" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="43" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="43" name="PAGES">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="52" parent="43" name="ARTICLE">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="53" parent="43" name="AUTHOR_ID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="54" parent="43" name="FK_BOOK_AUTHOR_ID">
+      <ColNames>AUTHOR_ID</ColNames>
+    </index>
+    <key id="55" parent="43" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="43" name="FK_BOOK_AUTHOR_ID">
+      <ColNames>AUTHOR_ID</ColNames>
+      <RefSchemaName>booksnew2</RefSchemaName>
+      <RefTableName>author</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="57" parent="44" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="58" parent="44" name="NAME">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="59" parent="44" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="45" name="genres_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="45" name="books_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="62" parent="45" name="FK_GENRE_BOOK_books_ID">
+      <ColNames>books_ID</ColNames>
+    </index>
+    <key id="63" parent="45" name="PRIMARY">
+      <ColNames>genres_ID
+books_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="64" parent="45" name="FK_GENRE_BOOK_genres_ID">
+      <ColNames>genres_ID</ColNames>
+      <RefSchemaName>booksnew2</RefSchemaName>
+      <RefTableName>genre</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="65" parent="45" name="FK_GENRE_BOOK_books_ID">
+      <ColNames>books_ID</ColNames>
+      <RefSchemaName>booksnew2</RefSchemaName>
+      <RefTableName>book</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
